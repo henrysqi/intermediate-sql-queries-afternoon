@@ -1,0 +1,49 @@
+//////////////////////// practice joins
+
+1. 
+SELECT *
+FROM invoice i 
+JOIN invoiceline il ON i.invoiceid = il.invoiceid 
+WHERE total > 0.99
+
+2. 
+SELECT invoicedate, firstname, lastname, total
+FROM invoice i 
+JOIN Customer c ON i.customerid = c.customerid
+
+3. 
+select c.customerid,c.firstname, c.lastname,e.firstname, e.lastname 
+from customer c 
+join employee e ON c.supportrepid = e.employeeid
+
+4. 
+select title, name 
+from album 
+join artist ON album.artistid = artist.artistid
+
+5.
+select * 
+from playlisttrack p1
+join playlist p2 ON p1.playlistid = p2.playlistid 
+where name = "Music"
+
+6. 
+select * 
+from track
+join playlisttrack on track.trackid = playlisttrack.trackid 
+where playlistid = 5
+
+7.
+select track.name, playlist.name
+from track
+join playlisttrack on track.trackid = playlisttrack.trackid
+join playlist on playlisttrack.playlistid = playlist.playlistid
+
+8.
+select track.name, genre.name, album.title 
+from track
+join genre on track.genreid = genre.genreid
+join album on track.albumid = album.albumid
+where genre.name like "alternative%" 
+
+///////////////////////////Practice nested queries
