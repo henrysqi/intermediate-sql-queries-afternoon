@@ -124,6 +124,7 @@ where genreid in (
 )
 
 ////////////////// group by
+
 1. 
 select genreid, count(*)
 from track
@@ -140,6 +141,29 @@ having genreid in (
 )
 
 3.
+select artist.name, count(*)
+from artist
+join album where artist.artistid = album.artistid
+group by artist.name
+
+////////////////// use distinct
+
+1.
+select distinct composer 
+from track
+
+2.
+select distinct billingpostalcode
+from invoice
+
+3. 
+select distinct company
+from customer
+
+//////////////////////// delete rows
+
+1.
+
 
 
 
