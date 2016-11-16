@@ -123,6 +123,23 @@ where genreid in (
   select genreid from genre where name = "Metal" 
 )
 
+////////////////// group by
+1. 
+select genreid, count(*)
+from track
+group by genreid
+
+2.
+select genreid, count(*)
+from track
+group by genreid
+having genreid in (
+  select genreid 
+  from genre 
+  where name = "Pop"
+)
+
+3.
 
 
 
